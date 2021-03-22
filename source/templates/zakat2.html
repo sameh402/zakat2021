@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}MO7{% endblock %}
+
+{% block body %}
+<div align="center">
+<form action="/calc2  " method="POST">
+     <label for="q"><h5>قيمة الربح السنوي من المحاصيل الزراعيه </h5></label><br>
+    <input style="text-align:center" type="text" id="content2" name="q"class="form-control" value="{{ request.form['q'] }}"><br>
+    <input type="submit" class="btn btn-primary" value="Calculate!">
+</form>
+    <br>
+    <div class="card">
+  <div class="card-header">
+    قيمة الزكاة
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+        {{result}}
+    </blockquote>
+  </div>
+</div>
+
+
+{% endblock %}

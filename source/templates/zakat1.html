@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}MO7{% endblock %}
+
+{% block body %}
+<div align="center">
+<form action="/calc1" method="POST">
+    <label for="x"><h5>اكتب سعر جرام الذهب</h5></label><br>
+    <input  style="text-align:center" type="text" id="content1" name="x" class="form-control" value="{{ request.form['x'] }}"><br>
+     <label for="y"><h5>ما قيمة مدخراتك النقديه التي مر عليها حول</h5></label><br>
+    <input style="text-align:center" type="text" id="content2" name="y"class="form-control" value="{{ request.form['y'] }}"><br>
+    <input type="submit" class="btn btn-primary" value="Calculate!">
+</form>
+    <br>
+    <div class="card">
+  <div class="card-header">
+    قيمة الزكاة
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+        {{result}}
+    </blockquote>
+  </div>
+</div>
+
+
+{% endblock %}
